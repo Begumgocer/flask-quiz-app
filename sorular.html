@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <!-- Bu sayfada kullanıcının cevaplayacağı kişisel sorular, sınav soruları ve sınav ile ilgili bazı açıklamalar bulunmaktadır. -->
+    <!-- Ayrıca test bitimi sonrası kullanıcının puan bilgisi de bu sayfada yer almaktadır. -->
+    
+    <head>
+        <title>
+            Python ile Yapay Zeka Geliştirme Soruları
+        </title>
+        <style>
+            #puan{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+                font-weight: bold;
+            }
+            body{
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                margin: 0;
+            }
+            footer{
+                margin-top: auto;
+                text-align: center;
+                padding: 10px;
+                font-size: larger;
+                font-weight: bolder;
+            }p{
+                font-size: 15px;
+            }a{
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body> 
+        {% if puan is not none %}
+        <div style="position: absolute; top: 10px; right: 10px; padding: 10px;">
+        Puanınız: {{ puan }}%
+    </div>
+        {% endif %}
+        <a href="/">Anasayfa</a>
+        <h2>
+            Python ile Yapay Zeka Geliştirme
+        </h2>
+
+        <p>Lütfen sınav sorularını çözmeye başlamadan önce kendiniz ile ilgili soruları cevaplayınız.</p>
+       
+        <p>Sınav 6 sorudan oluşmaktadır. </p>
+        
+        <p>Sınavı tamamladıktan sonra GÖNDER butonuna tıklayıp cevaplarınızı kaydetmeyi unutmayınız.</p>
+        <p>Cevaplarınızı kaydettikten sonra sağ üst köşede puanınızı görebilirsiniz.</p>
+        <h3>
+            BAŞARILAR!!
+        </h3>
+        <form method="POST" action="/sorular">
+            <!-- Bu kısımda kullanıcıdan ad-soyad bilgisi alınıyor ve input kısmınnın boş ve alfabetik değer dışında değer girilmesi engelleniyor  -->
+            Adınız: <input type="text" name="ad" pattern="[a-zA-Z]+" title="Adınız sadece harflerden oluşmalıdır!" required> 
+            <br>
+            <br>
+            Soyadınız: <input type="text" name="soyad" pattern="[a-zA-Z]+" title="Soyadınız sadece harflerden oluşmalıdır!" required>
+            <br>
+            <br>
+            <br>
+                Yaşınız:
+                <select name="yas" >
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                </select>
+                <br><br>
+                <h4>Soru 1)</h4>
+                <p>Python Nedir?</p>
+                <input type="radio" name="soru1" value="hayvan">Bir tür hayvan<br>
+                <input type="radio" name="soru1" value="dil">Bir programlama dili<br>
+                <input type="radio" name="soru1" value="alet">Bir müzik aleti<br>
+                <br>
+                <h4>Soru 2)</h4>
+                <p>Yapay Zeka (AI) ne demektir?</p>
+                <input type="radio" name="soru2" value="robot" >Akıllı robotlar ve bilgisayarların karar verebilmesi<br>
+                <input type="radio" name="soru2" value="oyun">Video oyunları oynamak<br>
+                <input type="radio" name="soru2" value="film">Bilgisayarda film izlemek<br>
+                <br>
+                <h4>Soru 3)</h4>
+                <p>Bir yapay zeka modelinin öğrenmesi için neye ihtiyacı vardır?</p>
+                <input type="radio" name="soru3" value="spor" >Spor yapmaya<br>
+                <input type="radio" name="soru3" value="veri">Çok sayıda veriye<br>
+                <input type="radio" name="soru3" value="sans">Sadece şansa<br>
+                <br>
+                <h4>Soru 4)</h4>
+                <p>Yapay zeka modeli bir resmi nasıl tanır?</p>
+                <input type="radio" name="soru4" value="boyamak" >Resmi boyayarak<br>
+                <input type="radio" name="soru4" value="egitmek">Verilerle eğitilerek<br>
+                <input type="radio" name="soru4" value="yapistirmak">Resmi kesip yapıştırarak<br>
+                <br>
+                <h4>Soru 5)</h4>
+                <p>Python'da "for" döngüsü ne işe yarar?</p>
+                <input type="radio" name="soru5" value="tekrar" >Bir işi tekrar tekrar yapmaya<br>
+                <input type="radio" name="soru5" value="birkez">Bir kez çalıştırmaya<br>
+                <input type="radio" name="soru5" value="uyutmak">Bilgisayarı uyutmaya<br>
+                <br>
+                <h4>Soru 6)</h4>
+                <p>"Makine Öğrenmesi" ne demektir?</p>
+                <input type="radio" name="soru6" value="oyun" >Makinelerin oyun oynaması<br>
+                <input type="radio" name="soru6" value="deneyim">Makinelerin ve bilgisayarların deneyimlerden öğrenmesi<br>
+                <input type="radio" name="soru6" value="müzik">Makinelerin müzik dinlemesi<br>
+                <br><br>
+                <input type="submit" value="Gönder">
+                <input type="reset" value="Seçimi Temizle">
+            </form>
+        
+        
+            <footer>Hazırlayan: Begüm Göçer</footer>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hatalı Giriş</title>
+</head>
+<!-- Bu sayfa kullanıcının formu eksik bilgilerle tamamlaması durumunda ortaya çıkacak hataların ekrana yazdığı, kullanıcıyı tekrar anasayfaya yönlendirdiği sayfadır. -->
+<body style=" display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+    <h1>Hata!</h1>
+    {% if hata_mesaji %}
+        <p>Hata= {{ hata_mesaji }}</p>
+    {% endif %}
+    <a href="/">Ana Sayfa</a>
+    <footer style="margin-top: auto; text-align: center; padding: 10px; font-size: larger; font-weight: bolder;">Hazırlayan: Begüm Göçer</footer>
+</body>
+</html>
